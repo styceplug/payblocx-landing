@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PayBlocx | One wallet for Naira, Cedis and stablecoins</title>
+    <meta
+      name="description"
+      content="Hold NGN, GHS, USDT and USDC in one app. Swap at locked rates and send to any bank, mobile money wallet or PayBlocx @tag in seconds."
+    />
+    <meta name="theme-color" content="#1E324D" />
+    <meta property="og:title" content="PayBlocx | One wallet for Naira, Cedis and stablecoins" />
+    <meta
+      property="og:description"
+      content="Hold, swap and send Naira, Cedis and stablecoins from one app built for Nigeria and Ghana."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/app-icon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap"
+    />
+    <link rel="preload" href="/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- NAV BAR -->
+    <header class="nav" data-nav>
+      <div class="container nav__inner">
+        <a class="brand" href="#top" aria-label="PayBlocx home">
+          <img src="/assets/logo.png" alt="" width="32" height="32" />
+          <span>PayBlocx</span>
+        </a>
+        <nav class="nav__links" id="nav-links" aria-label="Main">
+          <a href="#features">Features</a>
+          <a href="#currencies">Currencies</a>
+          <a href="#security">Security</a>
+          <a href="#faq">FAQ</a>
+          <a class="btn btn--soft nav__cta" href="#waitlist">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Join waitlist
+          </a>
+        </nav>
+        <button class="nav__toggle" type="button" aria-controls="nav-links" aria-expanded="false" data-nav-toggle>
+          <span class="sr-only">Open menu</span>
+          <span class="nav__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="container hero__lockup">
+          <h1 class="display">
+            Send, Swap and Hold Money Across Nigeria and Ghana with
+            <span class="gradient-text">One Wallet</span>
+          </h1>
+          <p class="lead">
+            PayBlocx gives you Naira, Cedi and stablecoin wallets in one app. Swap at locked rates and send to any bank,
+            mobile money wallet or PayBlocx @tag in seconds.
+          </p>
+          <form class="cta-pill" data-waitlist="phone" novalidate>
+            <label class="cta-pill__country">
+              <span class="sr-only">Country</span>
+              <span class="flag flag--ng" data-country-flag aria-hidden="true"></span>
+              <select name="country" data-country>
+                <option value="NG" data-dial="+234">+234</option>
+                <option value="GH" data-dial="+233">+233</option>
+              </select>
+            </label>
+            <label class="cta-pill__input">
+              <span class="sr-only">Phone number</span>
+              <input name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="Phone no." required />
+            </label>
+            <button class="btn btn--primary" type="submit">Join Waitlist</button>
+          </form>
+          <p class="form-note" data-form-note role="status" hidden></p>
+        </div>
+
+        <div class="hero__tease" aria-label="PayBlocx app screens">
+          <div class="device hero__phone hero__phone--1">
+            <img src="/assets/screens/hero1.png" alt="Wallets screen with Naira, Cedi, USDT and USDC balances" width="534" height="1081" loading="lazy" />
+          </div>
+          <div class="device hero__phone hero__phone--2">
+            <img src="/assets/screens/hero2.png" alt="Home screen with gross wallet balance and quick actions" width="534" height="1081" />
+          </div>
+          <div class="device hero__phone hero__phone--3">
+            <img src="/assets/screens/hero3.png" alt="Send money options: bank transfer, mobile money and PayBlocx tag" width="534" height="1081" loading="lazy" />
+          </div>
+          <div class="device hero__phone hero__phone--4">
+            <img src="/assets/screens/hero4.png" alt="Insights screen with net worth, income and expenses" width="534" height="1081" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- CURRENCY ROLL (replaces the press-logo band) -->
+      <section class="roll" aria-label="Supported currencies and payout methods">
+        <div class="container roll__inner">
+          <p class="roll__lead">One app for the currencies and payout rails you actually use.</p>
+          <div class="roll__track-wrap">
+            <ul class="roll__track" data-marquee>
+              <li><img src="/assets/currencies/ngn.png" alt="" width="32" height="32" />Nigerian Naira</li>
+              <li><img src="/assets/currencies/ghs.png" alt="" width="32" height="32" />Ghana Cedi</li>
+              <li><img src="/assets/currencies/usdt.png" alt="" width="32" height="32" />Tether USDT</li>
+              <li><img src="/assets/currencies/usdc.png" alt="" width="32" height="32" />USD Coin</li>
+              <li><img class="roll__logo-wide" src="/assets/momo.png" alt="" width="61" height="32" />Mobile money</li>
+              <li><img src="/assets/logo.png" alt="" width="32" height="32" />PayBlocx tags</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOLUTION ONE -->
+      <section class="solution" id="features">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Naira &amp; Cedi accounts</p>
+            <h2 class="h2">Say Goodbye to Cross-Border Payment Hassles</h2>
+            <p class="section-head__sub">
+              Get verified once and receive money into your own Naira and Ghana Cedi account details, all inside one app.
+            </p>
+          </header>
+
+          <div class="versus">
+            <ul class="versus__pains" data-cycle>
+              <li>Separate apps for every currency</li>
+              <li>Waiting days for cross-border transfers</li>
+              <li>Queues at the bank or a forex desk</li>
+              <li>Rates that change while you pay</li>
+              <li class="is-active">No clear view of your total balance</li>
+              <li>Limited ways to pay out in Ghana</li>
+              <li>Long, paper-based verification</li>
+              <li>Fees you only see afterwards</li>
+              <li>Sharing long account numbers for small payments</li>
+            </ul>
+            <div class="versus__divider" aria-hidden="true"><span>VS</span></div>
+            <article class="feature-card feature-card--tint-1">
+              <div class="feature-card__media">
+                <div class="device device--md device--cropped">
+                  <img src="/assets/screens/hero1.png" alt="Wallets screen with Naira, Cedi, USDT and USDC balances" width="534" height="1081" loading="lazy" />
+                </div>
+              </div>
+              <div class="feature-card__body">
+                <h3 class="h3">Local accounts in minutes</h3>
+                <p>
+                  Verified users get a Naira account number and a Ghana Cedi account to receive bank transfers, plus your
+                  own USDT and USDC deposit addresses.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOLUTION TWO -->
+      <section class="solution" id="currencies">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Real-time exchange rates</p>
+            <h2 class="h2">Effortlessly Convert Currency</h2>
+            <p class="section-head__sub">
+              Swap between Naira, Cedis, USDT and USDC in a few taps. Your quote is locked before you confirm, so the rate
+              you see is the rate you get.
+            </p>
+          </header>
+
+          <div class="versus versus--reverse">
+            <article class="feature-card feature-card--tint-2">
+              <div class="feature-card__media">
+                <div class="device device--md device--cropped">
+                  <img src="/assets/screens/hero-select-currency.png" alt="Currency picker for sending to Nigeria or Ghana" width="534" height="1081" />
+                </div>
+                <span class="float-chip float-chip--rate" aria-hidden="true">
+                  <img src="/assets/currencies/usdt.png" alt="" width="24" height="24" />
+                  1 USDT = ₦1,587
+                </span>
+                <span class="float-chip float-chip--lock" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Rate locked
+                </span>
+              </div>
+              <div class="feature-card__body">
+                <h3 class="h3">Rates locked before you swap</h3>
+                <p>Every swap starts with a live quote and a short countdown, so prices don't move while you confirm.</p>
+              </div>
+            </article>
+            <div class="versus__divider" aria-hidden="true"><span>VS</span></div>
+            <ul class="currency-list">
+              <li>
+                <img src="/assets/currencies/ngn.png" alt="" width="40" height="40" />
+                <div>
+                  <h3>Nigerian Naira</h3>
+                  <p>Your own account number · payouts to any Nigerian bank</p>
+                </div>
+              </li>
+              <li>
+                <img src="/assets/currencies/ghs.png" alt="" width="40" height="40" />
+                <div>
+                  <h3>Ghana Cedi</h3>
+                  <p>Payouts to Ghanaian banks and MTN, Telecel and AirtelTigo MoMo</p>
+                </div>
+              </li>
+              <li class="is-active">
+                <img src="/assets/currencies/usdt.png" alt="" width="48" height="48" />
+                <div>
+                  <h3>Tether (USDT)</h3>
+                  <p>Hold dollar value · receive on-chain to your own address</p>
+                </div>
+              </li>
+              <li>
+                <img src="/assets/currencies/usdc.png" alt="" width="40" height="40" />
+                <div>
+                  <h3>USD Coin (USDC)</h3>
+                  <p>Swap to and from Naira or Cedis in seconds</p>
+                </div>
+              </li>
+              <li>
+                <span class="currency-list__tag" aria-hidden="true">@</span>
+                <div>
+                  <h3>PayBlocx tags</h3>
+                  <p>Send to any PayBlocx user instantly with their @tag</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOLUTION THREE -->
+      <section class="solution">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Send &amp; receive</p>
+            <h2 class="h2">Experience Seamless Money Transfers</h2>
+            <p class="section-head__sub">
+              Pay a bank account, a mobile money wallet or another PayBlocx user from the same screen.
+            </p>
+          </header>
+
+          <div class="versus">
+            <ul class="versus__pains" data-cycle>
+              <li>Typing the same account details every time</li>
+              <li>Guessing whether the account name is right</li>
+              <li>Waiting days for cross-border transfers</li>
+              <li>No receipt to show you've paid</li>
+              <li class="is-active">Different apps for bank and MoMo</li>
+              <li>Fees you only see afterwards</li>
+              <li>Unclear transfer status</li>
+              <li>Approving payments with only a password</li>
+              <li>Sharing long account numbers for small payments</li>
+            </ul>
+            <div class="versus__divider" aria-hidden="true"><span>VS</span></div>
+            <article class="feature-card feature-card--tint-3">
+              <div class="feature-card__media">
+                <div class="device device--md device--cropped">
+                  <img src="/assets/screens/hero3.png" alt="Send money screen with bank, mobile money and tag options" width="534" height="1081" loading="lazy" />
+                </div>
+              </div>
+              <div class="feature-card__body">
+                <h3 class="h3">Effortless Payments</h3>
+                <p>
+                  Saved beneficiaries, automatic account-name checks, live status and a shareable receipt for every
+                  transfer.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA REINFORCEMENT -->
+      <section class="container">
+        <div class="cta-band">
+          <svg class="cta-band__rings" viewBox="0 0 800 800" aria-hidden="true">
+            <circle cx="400" cy="400" r="120" />
+            <circle cx="400" cy="400" r="200" />
+            <circle cx="400" cy="400" r="280" />
+            <circle cx="400" cy="400" r="360" />
+          </svg>
+          <div class="cta-band__copy">
+            <h2 class="h2 h2--light">Move Money Between Naira, Cedis and Dollars in Seconds</h2>
+            <ul class="checks">
+              <li>Locked swap rates</li>
+              <li>PIN or Face ID on every payment</li>
+              <li>Instant @tag transfers</li>
+            </ul>
+          </div>
+          <div class="cta-band__cards" aria-hidden="true">
+            <div class="activity activity--1">
+              <span class="activity__icon activity__icon--in">↓</span>
+              <div><strong>₦158,700 received</strong><small>Swap from USDT</small></div>
+              <b class="pos">+₦158,700</b>
+            </div>
+            <div class="activity activity--2">
+              <span class="activity__icon"><img src="/assets/currencies/ghs.png" alt="" width="40" height="40" /></span>
+              <div><strong>GH₵ 50 sent to Ama</strong><small>MTN mobile money</small></div>
+              <b class="neg">-GH₵ 50</b>
+            </div>
+            <div class="activity activity--3">
+              <span class="activity__icon"><img src="/assets/currencies/usdc.png" alt="" width="40" height="40" /></span>
+              <div><strong>100 USDC converted</strong><small>USDC to Naira</small></div>
+            </div>
+            <svg class="bolt" width="58" height="92" viewBox="0 0 58 92" aria-hidden="true">
+              <path d="M34 0 0 52h22l-6 40L58 34H34l10-34Z" fill="#FFB547" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECURITY (replaces the testimonials carousel: no invented reviews) -->
+      <section class="security" id="security">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Security</p>
+            <h2 class="h2">Built to Keep Your Money Safe</h2>
+          </header>
+          <div class="carousel" data-carousel>
+            <div class="carousel__ghost carousel__ghost--left" aria-hidden="true"></div>
+            <div class="carousel__card">
+              <button class="carousel__arrow carousel__arrow--prev" type="button" data-prev aria-label="Previous">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15.75 19.5 8.25 12l7.5-7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="carousel__viewport" aria-live="polite">
+                <figure class="carousel__slide is-active">
+                  <blockquote>“Every payment needs your 4-digit transaction PIN or Face ID, so nobody moves your money without you.”</blockquote>
+                  <figcaption><span class="carousel__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"/></svg></span><span><strong>Transaction PIN &amp; biometrics</strong><small>On every transfer, swap and withdrawal</small></span></figcaption>
+                </figure>
+                <figure class="carousel__slide">
+                  <blockquote>“See every device signed in to your account and log the others out with one tap.”</blockquote>
+                  <figcaption><span class="carousel__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg></span><span><strong>Device management</strong><small>New-login alerts by push and email</small></span></figcaption>
+                </figure>
+                <figure class="carousel__slide">
+                  <blockquote>“Turn on two-factor authentication with an authenticator app to keep your login yours.”</blockquote>
+                  <figcaption><span class="carousel__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12.75 11.25 15 15 9.75m-3-7.04A11.96 11.96 0 0 1 3.6 6 12 12 0 0 0 12 21.75 12 12 0 0 0 20.4 6 11.96 11.96 0 0 1 12 2.71Z"/></svg></span><span><strong>Two-factor authentication</strong><small>Optional, set up in seconds</small></span></figcaption>
+                </figure>
+                <figure class="carousel__slide">
+                  <blockquote>“Verified identities and tiered limits keep the platform safe for everyone who uses it.”</blockquote>
+                  <figcaption><span class="carousel__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Zm6-10.13a1.88 1.88 0 1 1-3.75 0 1.88 1.88 0 0 1 3.75 0ZM5.5 15.5a3.75 3.75 0 0 1 6.5 0"/></svg></span><span><strong>Identity verification</strong><small>Higher limits as you verify more</small></span></figcaption>
+                </figure>
+              </div>
+              <button class="carousel__arrow carousel__arrow--next" type="button" data-next aria-label="Next">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="m8.25 4.5 7.5 7.5-7.5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="carousel__ghost carousel__ghost--right" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq" id="faq">
+        <div class="container faq__inner">
+          <header class="section-head">
+            <p class="eyebrow">FAQ’s</p>
+            <h2 class="h2">Got questions?</h2>
+            <p class="section-head__sub">Get the answers to your questions about PayBlocx.</p>
+          </header>
+          <div class="accordion" data-accordion>
+            <details open>
+              <summary>When can I start using PayBlocx?</summary>
+              <p>
+                We're opening access in phases. Join the waitlist with your phone number or email and we'll tell you
+                as soon as your account is ready.
+              </p>
+            </details>
+            <details>
+              <summary>What is PayBlocx?</summary>
+              <p>
+                PayBlocx is a multi-currency wallet for Nigeria and Ghana. Hold Naira, Cedis, USDT and USDC, swap between
+                them at locked rates, and send money to banks, mobile money wallets or other PayBlocx users by @tag.
+              </p>
+            </details>
+            <details>
+              <summary>Which currencies can I hold?</summary>
+              <p>
+                Nigerian Naira (NGN), Ghana Cedi (GHS), Tether (USDT) and USD Coin (USDC). Each wallet unlocks as you
+                complete the matching verification step.
+              </p>
+            </details>
+            <details>
+              <summary>How do I verify my identity?</summary>
+              <p>
+                Verification happens inside the app. Start with your basic ID details, then add documents to move up a
+                tier. Each tier unlocks more currencies and higher daily limits.
+              </p>
+            </details>
+            <details>
+              <summary>How long do transfers take?</summary>
+              <p>
+                Transfers to other PayBlocx users by @tag are instant. Bank and mobile money payouts are usually
+                completed within minutes, and you can track the status of each one in the app.
+              </p>
+            </details>
+            <details>
+              <summary>Are there any hidden fees?</summary>
+              <p>
+                No. Any fee is shown before you confirm a transaction, together with the total amount that will leave
+                your wallet.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="container" id="waitlist">
+        <div class="final-cta">
+          <svg class="final-cta__lines" viewBox="0 0 900 600" aria-hidden="true">
+            <path d="M-50 520C150 420 260 140 520 120s420 160 480 40" />
+            <path d="M-50 560C170 460 290 190 540 170s400 150 470 40" />
+            <path d="M-50 600C190 500 320 240 560 220s380 140 460 40" />
+          </svg>
+          <div class="final-cta__copy">
+            <h2 class="h2 h2--light">Be First to Get PayBlocx</h2>
+            <p>Join the waitlist and we'll let you know as soon as your multi-currency wallet is ready.</p>
+            <form class="waitlist-field" data-waitlist="email" novalidate>
+              <label class="sr-only" for="waitlist-email">Email address</label>
+              <input id="waitlist-email" name="email" type="email" autocomplete="email" placeholder="Enter your email" required />
+              <button class="btn btn--sky" type="submit">Join Waitlist</button>
+            </form>
+            <p class="form-note form-note--light" data-form-note role="status" hidden></p>
+          </div>
+          <div class="final-cta__media" aria-hidden="true">
+            <div class="device device--lg">
+              <img src="/assets/screens/hero2.png" alt="" width="534" height="1081" loading="lazy" />
+            </div>
+            <svg class="bubble" width="140" height="136" viewBox="0 0 140 136"><path d="M70 6c35 0 64 24 64 56s-29 56-64 56c-9 0-18-2-26-5L12 128l10-30C12 88 6 76 6 62 6 30 35 6 70 6Z" fill="#9FDCF5"/><circle cx="46" cy="62" r="7" fill="#1E324D"/><circle cx="70" cy="62" r="7" fill="#1E324D"/><circle cx="94" cy="62" r="7" fill="#1E324D"/></svg>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__cols">
+            <div>
+              <h3>Company</h3>
+              <a href="#features">About</a>
+              <a href="mailto:support@payblocx.com" data-link="supportEmail">Contact</a>
+              <a href="#faq">FAQ</a>
+            </div>
+            <div>
+              <h3>Product</h3>
+              <a href="#currencies">Multi-currency wallets</a>
+              <a href="#currencies">Currency swaps</a>
+              <a href="#features">Bank &amp; MoMo payouts</a>
+            </div>
+            <div>
+              <h3>Legal</h3>
+              <a href="https://payblocx.com/terms" data-link="terms">Terms &amp; conditions</a>
+              <a href="https://payblocx.com/privacy" data-link="privacy">Privacy policy</a>
+            </div>
+          </div>
+          <form class="newsletter" data-newsletter>
+            <label for="newsletter-email"><h3>Sign up for our newsletter</h3></label>
+            <div class="newsletter__field">
+              <input id="newsletter-email" name="email" type="email" placeholder="Enter email" autocomplete="email" required />
+              <button class="btn btn--primary" type="submit">Subscribe</button>
+            </div>
+            <p class="newsletter__note" data-newsletter-note hidden></p>
+          </form>
+        </div>
+        <div class="footer__bottom">
+          <div class="socials" data-socials>
+            <a href="#" data-link="instagram" aria-label="PayBlocx on Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" data-link="x" aria-label="PayBlocx on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1 2h6.4l4.4 5.9L18.9 2Zm-1.1 18h1.7L6.3 3.9H4.5L17.8 20Z"/></svg></a>
+            <a href="#" data-link="tiktok" aria-label="PayBlocx on TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.1a6.4 6.4 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.4 1.3V6.5a4.4 4.4 0 0 1-4.4-4.5Z"/></svg></a>
+            <a href="#" data-link="linkedin" aria-label="PayBlocx on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm7 0h3.8v1.6h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4V9.5Z"/></svg></a>
+          </div>
+          <p>© <span data-year>2026</span> PayBlocx. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
