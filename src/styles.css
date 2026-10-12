@@ -319,6 +319,27 @@ p {
   gap: 40px;
   text-align: center;
 }
+.rate-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: -16px;
+  padding: 8px 16px;
+  border: 1px solid rgba(29, 176, 234, 0.35);
+  border-radius: 999px;
+  background: var(--white);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--navy);
+  box-shadow: 0 6px 18px -10px rgba(30, 50, 77, 0.35);
+}
+.rate-badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #12b76a;
+  box-shadow: 0 0 0 4px rgba(18, 183, 106, 0.18);
+}
 .hero__lockup .display {
   max-width: 928px;
 }
@@ -1427,6 +1448,11 @@ p {
   }
   .hero__lockup .lead {
     margin-top: -20px;
+  }
+  .rate-badge {
+    font-size: 13px;
+    padding: 7px 12px;
+    margin-bottom: -12px;
   }
   .cta-pill__text {
     font-size: 15px;
