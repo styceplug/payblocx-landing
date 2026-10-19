@@ -19,4 +19,7 @@ export const links = {
   // POST { name, email, phone, topic, message, source } here for the contact form.
   // Leave empty to fall back to a pre-filled email to support.
   contactEndpoint: "",
+  // POST { name, email, phone, tag, reason, source } here for /delete-account/ requests.
+  // Leave empty to fall back to a pre-filled email to support.
+  deleteAccountEndpoint: "",
 };

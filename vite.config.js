@@ -13,6 +13,7 @@ export default defineConfig({
         terms: page("./terms/index.html"),
         privacy: page("./privacy/index.html"),
         contact: page("./contact/index.html"),
+        deleteAccount: page("./delete-account/index.html"),
       },
     },
   },

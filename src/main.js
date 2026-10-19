@@ -244,6 +244,65 @@ if (contactForm) {
   });
 }
 
+// Delete-account request (/delete-account/, not linked from the site).
+const deleteForm = document.querySelector("[data-delete-account]");
+if (deleteForm) {
+  const note = deleteForm.querySelector("[data-delete-note]");
+  const say = (text, isError = false) => {
+    note.textContent = text;
+    note.classList.toggle("is-error", isError);
+    note.hidden = false;
+  };
+  deleteForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let firstInvalid = null;
+    for (const input of deleteForm.querySelectorAll("input, textarea")) {
+      const ok = input.checkValidity() && (!input.required || input.type === "checkbox" || input.value.trim() !== "");
+      input.closest(".field, .check")?.classList.toggle("is-invalid", !ok);
+      if (!ok && !firstInvalid) firstInvalid = input;
+    }
+    if (firstInvalid) {
+      say("Please enter your name and account email, and tick the confirmation box.", true);
+      firstInvalid.focus();
+      return;
+    }
+    const data = Object.fromEntries(
+      [...new FormData(deleteForm)].filter(([k]) => k !== "confirm").map(([k, v]) => [k, String(v).trim()]),
+    );
+
+    if (!links.deleteAccountEndpoint) {
+      const details = [
+        `Name: ${data.name}`,
+        `Account email: ${data.email}`,
+        data.phone && `Account phone: ${data.phone}`,
+        data.tag && `PayBlocx tag: ${data.tag}`,
+        data.reason && `Reason: ${data.reason}`,
+      ].filter(Boolean);
+      const body = ["Please delete my PayBlocx account.", "", ...details].join("\n");
+      window.location.href = `${links.supportEmail}?subject=${encodeURIComponent("Account deletion request")}&body=${encodeURIComponent(body)}`;
+      say("Your email app should open with the request ready to send. Send it from your account email so we can verify it's you.");
+      return;
+    }
+
+    const button = deleteForm.querySelector("button");
+    button.disabled = true;
+    try {
+      const res = await fetch(links.deleteAccountEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, source: "website" }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      say("Request received. We'll email you to confirm before your account is closed.");
+      deleteForm.reset();
+    } catch {
+      say("Something went wrong. Please try again or email support@payblocx.com.", true);
+    } finally {
+      button.disabled = false;
+    }
+  });
+}
+
 // Reveal sections on scroll.
 if (!reduceMotion && "IntersectionObserver" in window) {
   const targets = document.querySelectorAll(".section-head, .versus, .cta-band, .carousel, .accordion, .final-cta");

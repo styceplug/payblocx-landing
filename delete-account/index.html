@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Your Account | PayBlocx</title>
+    <meta name="description" content="How to delete your PayBlocx account and what happens to your data." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#1E324D" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" />
+    <link rel="preload" href="/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/contact.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav" data-nav>
+      <div class="container nav__inner">
+        <a class="brand" href="/" aria-label="PayBlocx home">
+          <img src="/assets/logo.png" alt="" width="32" height="32" />
+          <span>PayBlocx</span>
+        </a>
+        <nav class="nav__links" id="nav-links" aria-label="Main">
+          <a href="/#features">Features</a>
+          <a href="/#currencies">Currencies</a>
+          <a href="/#security">Security</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/contact/">Contact</a>
+          <a class="btn btn--soft nav__cta" href="/#waitlist">Join waitlist</a>
+        </nav>
+        <button class="nav__toggle" type="button" aria-controls="nav-links" aria-expanded="false" data-nav-toggle>
+          <span class="sr-only">Open menu</span>
+          <span class="nav__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="contact">
+      <div class="container">
+        <header class="contact__head">
+          <p class="eyebrow">Account</p>
+          <h1 class="display">Delete your PayBlocx account</h1>
+          <p class="lead">
+            You can close your account at any time. The quickest way is inside the app. If you can't sign in, send us a
+            request below and we'll handle it for you.
+          </p>
+        </header>
+
+        <div class="contact__grid">
+          <div class="contact__channels">
+            <section class="info-card">
+              <h2 class="h3">Delete in the app</h2>
+              <ol class="steps">
+                <li>Open PayBlocx and sign in.</li>
+                <li>Tap <strong>More</strong>, then <strong>Security</strong>.</li>
+                <li>Tap <strong>Delete account</strong> at the bottom of the screen.</li>
+                <li>Confirm with your transaction PIN.</li>
+              </ol>
+            </section>
+
+            <section class="info-card">
+              <h2 class="h3">Before you delete</h2>
+              <ul class="ticks">
+                <li>Withdraw any remaining balance in your Naira, Cedi and stablecoin wallets. We can't send funds once an account is closed.</li>
+                <li>Wait for any pending transfers, swaps or withdrawals to complete.</li>
+                <li>Deletion is permanent. You'll need to sign up and verify again to use PayBlocx later.</li>
+              </ul>
+            </section>
+
+            <section class="info-card">
+              <h2 class="h3">What happens to your data</h2>
+              <ul class="ticks">
+                <li><strong>Deleted:</strong> your profile, login details, saved bank accounts and beneficiaries, app preferences and device data, within 30 days of your request.</li>
+                <li>
+                  <strong>Kept for a limited time:</strong> transaction records and identity verification (KYC) details that
+                  financial and anti-money-laundering laws require us to keep, usually for at least 5 years. These are stored
+                  securely, used only to meet those legal duties, and then deleted.
+                </li>
+              </ul>
+              <p class="info-card__more">Read more in our <a href="/privacy/">Privacy Policy</a>.</p>
+            </section>
+          </div>
+
+          <form class="contact-form" data-delete-account novalidate>
+            <h2 class="h3">Request deletion</h2>
+            <p class="contact-form__privacy">
+              Use the email or phone number registered on your PayBlocx account. We'll confirm the request with you before
+              your account is closed.
+            </p>
+            <div class="contact-form__row">
+              <label class="field">
+                <span>Full name</span>
+                <input name="name" type="text" autocomplete="name" required />
+              </label>
+              <label class="field">
+                <span>Account email</span>
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+            </div>
+            <div class="contact-form__row">
+              <label class="field">
+                <span>Account phone <em>(optional)</em></span>
+                <input name="phone" type="tel" autocomplete="tel" inputmode="tel" />
+              </label>
+              <label class="field">
+                <span>PayBlocx tag <em>(optional)</em></span>
+                <input name="tag" type="text" placeholder="@yourtag" autocapitalize="off" />
+              </label>
+            </div>
+            <label class="field">
+              <span>Reason for leaving <em>(optional)</em></span>
+              <textarea name="reason" rows="4" placeholder="Anything we could have done better?"></textarea>
+            </label>
+            <label class="check">
+              <input name="confirm" type="checkbox" required />
+              <span>I understand that deleting my account is permanent and that I should withdraw my balance first.</span>
+            </label>
+            <p class="contact-form__privacy">Never include your PIN, password or one-time codes. We will never ask for them.</p>
+            <button class="btn btn--danger" type="submit">Request account deletion</button>
+            <p class="contact-form__note" data-delete-note role="status" hidden></p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__cols">
+            <div>
+              <h3>Company</h3>
+              <a href="/#features">About</a>
+              <a href="/contact/">Contact</a>
+              <a href="/#faq">FAQ</a>
+            </div>
+            <div>
+              <h3>Legal</h3>
+              <a href="/terms/">Terms &amp; conditions</a>
+              <a href="/privacy/">Privacy policy</a>
+            </div>
+          </div>
+        </div>
+        <p class="footer__company">
+          PayBlocx is a product of SafeScope Solution Limited, registered in Nigeria (registration no. 8145981). Naira and Cedi wallet
+          services, virtual accounts and payouts are provided through our licensed payment partner, Fincra, in line with
+          Central Bank of Nigeria regulations. PayBlocx is not a bank.
+        </p>
+        <div class="footer__bottom">
+          <p>© <span data-year>2026</span> PayBlocx. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
