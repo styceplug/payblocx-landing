@@ -9,7 +9,7 @@ for (const el of document.querySelectorAll("[data-link]")) {
       el.setAttribute("target", "_blank");
       el.setAttribute("rel", "noopener");
     }
-  } else if (el.closest("[data-socials]")) {
+  } else if (el.closest("[data-socials]") || el.hasAttribute("data-optional")) {
     el.hidden = true; // hide social icons that have no account yet
   }
 }
@@ -187,6 +187,58 @@ if (form) {
       note.textContent = "Something went wrong. Please try again.";
     } finally {
       note.hidden = false;
+      button.disabled = false;
+    }
+  });
+}
+
+// Contact form: posts to links.contactEndpoint when set, otherwise opens a pre-filled email to support.
+const contactForm = document.querySelector("[data-contact]");
+if (contactForm) {
+  const note = contactForm.querySelector("[data-contact-note]");
+  const say = (text, isError = false) => {
+    note.textContent = text;
+    note.classList.toggle("is-error", isError);
+    note.hidden = false;
+  };
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let firstInvalid = null;
+    for (const input of contactForm.querySelectorAll("input, textarea, select")) {
+      const ok = input.checkValidity() && (!input.required || input.value.trim() !== "");
+      input.closest(".field")?.classList.toggle("is-invalid", !ok);
+      if (!ok && !firstInvalid) firstInvalid = input;
+    }
+    if (firstInvalid) {
+      say("Please fill in your name, a valid email and a message of at least 10 characters.", true);
+      firstInvalid.focus();
+      return;
+    }
+    const data = Object.fromEntries(
+      [...new FormData(contactForm)].map(([k, v]) => [k, String(v).trim()]),
+    );
+
+    if (!links.contactEndpoint) {
+      const body = `${data.message}\n\nName: ${data.name}\nEmail: ${data.email}${data.phone ? `\nPhone: ${data.phone}` : ""}`;
+      window.location.href = `${links.supportEmail}?subject=${encodeURIComponent(`${data.topic}: ${data.name}`)}&body=${encodeURIComponent(body)}`;
+      say("Your email app should open with your message ready to send.");
+      return;
+    }
+
+    const button = contactForm.querySelector("button");
+    button.disabled = true;
+    try {
+      const res = await fetch(links.contactEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, source: "website" }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      say("Thanks, your message has been sent. We'll reply by email.");
+      contactForm.reset();
+    } catch {
+      say("Something went wrong. Please try again or email support@payblocx.com.", true);
+    } finally {
       button.disabled = false;
     }
   });

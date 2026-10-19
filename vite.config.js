@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 
 const page = (path) => fileURLToPath(new URL(path, import.meta.url));
 
-// Multi-page build: landing page plus the legal pages at /terms/ and /privacy/.
+// Multi-page build: landing page plus the legal pages at /terms/ and /privacy/, and /contact/.
 export default defineConfig({
   appType: "mpa",
   build: {
@@ -12,6 +12,7 @@ export default defineConfig({
         main: page("./index.html"),
         terms: page("./terms/index.html"),
         privacy: page("./privacy/index.html"),
+        contact: page("./contact/index.html"),
       },
     },
   },
