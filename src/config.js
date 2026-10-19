@@ -3,8 +3,8 @@ export const links = {
   appStore: "", // e.g. https://apps.apple.com/app/payblocx/id0000000000
   googlePlay: "", // e.g. https://play.google.com/store/apps/details?id=com.dreamsoftwarestudios.payblocx.payblocx
   supportEmail: "mailto:support@payblocx.com",
-  terms: "https://payblocx.com/terms",
-  privacy: "https://payblocx.com/privacy",
+  terms: "/terms/",
+  privacy: "/privacy/",
   instagram: "",
   x: "",
   tiktok: "",

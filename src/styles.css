@@ -1311,11 +1311,18 @@ p {
   font-size: 14px;
   color: var(--ink-2);
 }
+.footer__company {
+  max-width: 820px;
+  margin-top: 40px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
 .footer__bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 54px;
+  margin-top: 32px;
   font-size: 14px;
 }
 .socials {
